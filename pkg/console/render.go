@@ -14,7 +14,7 @@ type Console struct {
 // every leaf node and twice for every non-leaf node (first with
 // entering=true, then with entering=false). The method should write its
 // rendition of the node to the supplied writer w.
-func (c *Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool) blackfriday.WalkStatus {
+func (c Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool) blackfriday.WalkStatus {
 	switch node.Type {
 	case blackfriday.Heading:
 	case blackfriday.Text:
@@ -30,10 +30,10 @@ func (c *Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool)
 // implementation needs to inspect it to produce output.
 //
 // The output should be written to the supplied writer w. If your
-func (c *Console) RenderHeader(w io.Writer, ast *blackfriday.Node) {
+func (c Console) RenderHeader(w io.Writer, ast *blackfriday.Node) {
 }
 
 // RenderFooter is a symmetric counterpart of RenderHeader.
-func (c *Console) RenderFooter(w io.Writer, ast *blackfriday.Node) {
+func (c Console) RenderFooter(w io.Writer, ast *blackfriday.Node) {
 
 }
