@@ -3,7 +3,7 @@ package console
 import (
 	"io"
 
-	blackfriday "github.com/russross/blackfriday/v2"
+	blackfriday "github.com/russross/blackfriday"
 )
 
 // Console implements blackfriday.Render

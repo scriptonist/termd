@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/russross/blackfriday/v2"
+	"github.com/russross/blackfriday"
 )
 
 func TestRender(t *testing.T) {

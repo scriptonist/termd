@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/russross/blackfriday/v2"
+	"github.com/russross/blackfriday"
 	"github.com/ttacon/chalk"
 )
 
