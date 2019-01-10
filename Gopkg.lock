@@ -10,6 +10,25 @@
   version = "v1.4.7"
 
 [[projects]]
+  digest = "1:0e16b03c72bd42739ca68d055c10369e60d17838428f512f3b29ae115ba788e0"
+  name = "github.com/gdamore/encoding"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "6289cdc94c00ac4aa177771c5fce7af2f96b626d"
+  version = "v1.0.0"
+
+[[projects]]
+  digest = "1:937011a37a09b93be68052dfb3195fcfbff33b9472b37401b54027e9954906fb"
+  name = "github.com/gdamore/tcell"
+  packages = [
+    ".",
+    "terminfo",
+  ]
+  pruneopts = "UT"
+  revision = "aaadc574a6ed8dc3abe56036ca130dcee1ee6b6e"
+  version = "v1.1.1"
+
+[[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
   name = "github.com/hashicorp/hcl"
   packages = [
@@ -37,12 +56,28 @@
   version = "v1.0"
 
 [[projects]]
+  digest = "1:c65a16ac77d0b1aefc7009cabb6ac5ad05def02025f5be85f450c03f52cc6f86"
+  name = "github.com/lucasb-eyer/go-colorful"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "345fbb3dbcdb252d9985ee899a84963c0fa24c82"
+  version = "v1.0"
+
+[[projects]]
   digest = "1:c568d7727aa262c32bdf8a3f7db83614f7af0ed661474b24588de635c20024c7"
   name = "github.com/magiconair/properties"
   packages = ["."]
   pruneopts = "UT"
   revision = "c2353362d570a7bfa228149c62842019201cfb71"
   version = "v1.8.0"
+
+[[projects]]
+  digest = "1:0356f3312c9bd1cbeda81505b7fd437501d8e778ab66998ef69f00d7f9b3a0d7"
+  name = "github.com/mattn/go-runewidth"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "3ee7d812e62a0804a7d0a324e0249ca2db3476d3"
+  version = "v0.0.4"
 
 [[projects]]
   digest = "1:78bbb1ba5b7c3f2ed0ea1eab57bdd3859aec7e177811563edc41198a760b06af"
@@ -67,6 +102,14 @@
   pruneopts = "UT"
   revision = "c01d1270ff3e442a8a57cddc1c92dc1138598194"
   version = "v1.2.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:0f44ebd1757c5725456f2d6c564b196dd96593e68fda7236e345642940b9a88a"
+  name = "github.com/rivo/tview"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "36893a66979260e9758701ae306ec0d69c0f53c8"
 
 [[projects]]
   digest = "1:2ee0f15eb0fb04f918db7c2dcf39745f40d69f798ef171610a730e8a56aaa4fd"
@@ -136,14 +179,6 @@
   version = "v1.3.1"
 
 [[projects]]
-  digest = "1:33092b366cfcc395fae86161d7caa4c7ffef4f93ee43113c1c1e28fc0dc71972"
-  name = "github.com/ttacon/chalk"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "76b3c8b611dea8f83e49e9ce81fc2b189e0ef3d2"
-  version = "v0.1"
-
-[[projects]]
   branch = "master"
   digest = "1:91137b48dc3eb34409f731b49f63a5ebf73218168a065e1a93af24eb5b2f99e8"
   name = "golang.org/x/sys"
@@ -152,9 +187,11 @@
   revision = "48ac38b7c8cbedd50b1613c0fccacfc7d88dfcdf"
 
 [[projects]]
-  digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
+  digest = "1:69c6af69fd1551d253ed0520e4c9f312908b348a79a95ad5ae39883898f628b1"
   name = "golang.org/x/text"
   packages = [
+    "encoding",
+    "encoding/internal/identifier",
     "internal/gen",
     "internal/triegen",
     "internal/ucd",
@@ -179,10 +216,10 @@
   analyzer-version = 1
   input-imports = [
     "github.com/mitchellh/go-homedir",
+    "github.com/rivo/tview",
     "github.com/russross/blackfriday",
     "github.com/spf13/cobra",
     "github.com/spf13/viper",
-    "github.com/ttacon/chalk",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -1,10 +1,10 @@
 package console
 
 import (
-	"fmt"
 	"io/ioutil"
 	"testing"
 
+	"github.com/rivo/tview"
 	"github.com/russross/blackfriday"
 )
 
@@ -15,5 +15,18 @@ func TestRender(t *testing.T) {
 	}
 	renderer := new(Console)
 	output := blackfriday.Run(testmdbytes, blackfriday.WithRenderer(renderer), blackfriday.WithExtensions(blackfriday.CommonExtensions))
-	fmt.Println(string(output))
+	app := tview.NewApplication()
+	textView := tview.NewTextView().
+		SetDynamicColors(true).
+		SetRegions(true).
+		SetChangedFunc(func() {
+			app.Draw()
+		})
+	textView.Write(output)
+
+	textView.SetBorder(true)
+	if err := app.SetRoot(textView, true).SetFocus(textView).Run(); err != nil {
+		panic(err)
+	}
+
 }

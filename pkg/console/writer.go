@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/russross/blackfriday"
-	"github.com/ttacon/chalk"
 )
 
 func headingWriter(w io.Writer, heading blackfriday.HeadingData) {
@@ -14,5 +13,5 @@ func headingWriter(w io.Writer, heading blackfriday.HeadingData) {
 }
 
 func headingTextWriter(w io.Writer, content []byte) {
-	io.WriteString(w, fmt.Sprintf("%s\n", chalk.Bold.TextStyle(string(content))))
+	io.WriteString(w, fmt.Sprintf("[::b]%s\n", string(content)))
 }
