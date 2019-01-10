@@ -21,6 +21,8 @@ func (c Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool) 
 		switch node.Parent.Type {
 		case blackfriday.Heading:
 			headingTextWriter(w, node.Literal)
+		default:
+			io.WriteString(w, string(node.Literal))
 		}
 	}
 	return 0
