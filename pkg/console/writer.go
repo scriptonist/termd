@@ -13,5 +13,5 @@ func headingWriter(w io.Writer, heading blackfriday.HeadingData) {
 }
 
 func headingTextWriter(w io.Writer, content []byte) {
-	io.WriteString(w, fmt.Sprintf("\n[::b]%s\n", string(content)))
+	io.WriteString(w, fmt.Sprintf("\n\n[::b]%s\n\n", string(content)))
 }

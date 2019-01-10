@@ -1,6 +1,7 @@
 package console
 
 import (
+	"fmt"
 	"io"
 
 	blackfriday "github.com/russross/blackfriday"
@@ -22,8 +23,10 @@ func (c Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool) 
 		case blackfriday.Heading:
 			headingTextWriter(w, node.Literal)
 		default:
-			io.WriteString(w, string(node.Literal))
+			io.WriteString(w, fmt.Sprintf("%s", string(node.Literal)))
 		}
+	case blackfriday.CodeBlock:
+		io.WriteString(w, fmt.Sprintf("%s", string(node.Literal)))
 	}
 	return 0
 }
