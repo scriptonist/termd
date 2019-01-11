@@ -9,7 +9,7 @@ import (
 )
 
 func TestRender(t *testing.T) {
-	testmdbytes, err := ioutil.ReadFile("testdata/blogpost.md")
+	testmdbytes, err := ioutil.ReadFile("testdata/extensionbp.md")
 	if err != nil {
 		t.Fatal(err)
 	}

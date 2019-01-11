@@ -22,8 +22,17 @@ func (c Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool) 
 		switch node.Parent.Type {
 		case blackfriday.Heading:
 			headingTextWriter(w, string(node.Literal))
+		case blackfriday.List:
+			listWriter(w, string(node.Literal))
+		case blackfriday.Paragraph:
+			io.WriteString(w, fmt.Sprintf("\n\n%s", string(node.Literal)))
 		default:
 			io.WriteString(w, fmt.Sprintf("%s", string(node.Literal)))
+		}
+
+	case blackfriday.Link:
+		if !entering {
+			linkWriter(w, node.LinkData)
 		}
 	case blackfriday.CodeBlock:
 		codeWriter(w, string(node.Literal))

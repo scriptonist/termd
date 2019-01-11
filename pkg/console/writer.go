@@ -13,7 +13,15 @@ func headingWriter(w io.Writer, heading blackfriday.HeadingData) {
 }
 
 func headingTextWriter(w io.Writer, content string) {
-	io.WriteString(w, fmt.Sprintf("\n\n[::bu]%s\n\n", string(content)))
+	io.WriteString(w, fmt.Sprintf("\n\n[::bu]%s\n", string(content)))
+}
+
+func listWriter(w io.Writer, content string) {
+	io.WriteString(w, fmt.Sprintf("\n\n\n[red::]%s[-:-:-]\n\n\n", content))
+}
+
+func linkWriter(w io.Writer, linkData blackfriday.LinkData) {
+	io.WriteString(w, fmt.Sprintf(" ([blue::]%s[-:-:-]) ", string(linkData.Destination)))
 }
 
 func codeWriter(w io.Writer, content string) {
