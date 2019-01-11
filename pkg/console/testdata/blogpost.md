@@ -7,7 +7,6 @@ It solved the atomic broadcast problem in a public adversarial setting through c
 
 ## What is Atomic Broadcast?
 It is a message delivery paradigm which has the following properties:
-
 - Validity: If a correct process broadcasts message m, it eventually delivers m
 - Agreement: if a correct process delivers message m all correct processes eventually deliver m
 - Integrity: message m is only delivered once only if broadcast by its sender

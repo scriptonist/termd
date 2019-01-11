@@ -17,7 +17,7 @@ func headingTextWriter(w io.Writer, content string) {
 }
 
 func listWriter(w io.Writer, content string) {
-	io.WriteString(w, fmt.Sprintf("\n\n\n[red::]%s[-:-:-]\n\n\n", content))
+	io.WriteString(w, fmt.Sprintf("\n\t[::b]%s[-:-:-]\n", content))
 }
 
 func linkWriter(w io.Writer, linkData blackfriday.LinkData) {
