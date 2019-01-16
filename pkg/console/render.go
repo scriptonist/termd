@@ -26,6 +26,12 @@ func (c Console) RenderNode(w io.Writer, node *blackfriday.Node, entering bool) 
 		if !entering {
 			linkWriter(w, node.LinkData)
 		}
+	case blackfriday.Hardbreak:
+		io.WriteString(w, fmt.Sprintf("\n"))
+	case blackfriday.Softbreak:
+		io.WriteString(w, fmt.Sprintf("\n"))
+	case blackfriday.Code:
+		inlineCodeWriter(w, string(node.Literal))
 	case blackfriday.CodeBlock:
 		codeWriter(w, string(node.Literal))
 	case blackfriday.Text:

@@ -24,6 +24,9 @@ func linkWriter(w io.Writer, linkData blackfriday.LinkData) {
 	io.WriteString(w, fmt.Sprintf(" ([blue::]%s[-:-:-]) ", string(linkData.Destination)))
 }
 
+func inlineCodeWriter(w io.Writer, content string) {
+	io.WriteString(w, fmt.Sprintf("[::d]%s[::-] ", content))
+}
 func codeWriter(w io.Writer, content string) {
 	io.WriteString(w, fmt.Sprintf("\n\n"))
 	for _, s := range strings.Split(content, "\n") {
