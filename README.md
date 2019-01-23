@@ -2,5 +2,5 @@
 Render markdown to terminal
 
 # Demo 
-[demo](artifacts/demo.gif)
+![demo](artifacts/demo.gif)
     
