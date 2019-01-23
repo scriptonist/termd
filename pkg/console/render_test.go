@@ -13,8 +13,32 @@ import (
 	"github.com/russross/blackfriday"
 )
 
-func TestRender(t *testing.T) {
+func TestRenderBlog(t *testing.T) {
 	testmdbytes := []byte(getArticle(t, "cjqtwrdlt00g9ngs27ij20vob").Post.ContentMarkdown)
+	renderer := new(Console)
+	output := blackfriday.Run(testmdbytes, blackfriday.WithRenderer(renderer), blackfriday.WithExtensions(blackfriday.CommonExtensions))
+	app := tview.NewApplication()
+	textView := tview.NewTextView().
+		SetDynamicColors(true).
+		SetRegions(true).
+		SetChangedFunc(func() {
+			app.Draw()
+		})
+	textView.Write(output)
+
+	textView.SetBorder(true)
+	if err := app.SetRoot(textView, true).SetFocus(textView).Run(); err != nil {
+		panic(err)
+	}
+
+}
+
+func TestRenderFile(t *testing.T) {
+	testmdbytes, err := ioutil.ReadFile("testdata/test.md")
+	if err != nil {
+		t.Fatal(err)
+	}
+
 	renderer := new(Console)
 	output := blackfriday.Run(testmdbytes, blackfriday.WithRenderer(renderer), blackfriday.WithExtensions(blackfriday.CommonExtensions))
 	app := tview.NewApplication()
