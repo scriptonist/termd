@@ -12,7 +12,7 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/rivo/tview"
 	"github.com/russross/blackfriday"
-	"github.com/scriptonist/termd/pkg/console"
+	"github.com/scriptonist/termd/internal/console"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
